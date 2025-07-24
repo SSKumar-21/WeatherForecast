@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body style="background-image: url('<%= bgImage %>');">
+
+    <div class="main">
+        <div class="container">
+            <form action="/" method="post">
+                <input type="text" name="city" placeholder="Enter City">
+                <button >Submit</button>
+            </form>
+            <% if(locals.data){%>
+            <div class="data">
+                <h1><%= data.name %></h1>
+                <div class="image">
+                    <img src="<%= iconImage %>" alt="Weather Icon">
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>Weather Condition: <%= data.weather[0].main %></li>
+                        <li>Tempture: <%= data.main.temp %>°F</li>
+                        <li>Feel Like: <%= data.main.feels_like%>°F</li>
+                        <li>Humidity: <%= data.main.humidity%></li>
+                        <li>Wind Speed: <%= data.wind.speed%></li>
+                    </ul>
+                </div>
+            </div>
+            <% } else { %>
+                <div class="noData">
+                    <H1>NO INFORMATION FOUND</H1>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
