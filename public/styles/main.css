@@ -92,3 +92,10 @@ form button:hover {
   color: #ffcccc;
   font-size: 1.5em;
 }
+
+
+@media (max-width: 980px){
+  .main .container {
+    width: 95%;
+  }
+}
