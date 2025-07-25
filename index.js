@@ -48,7 +48,8 @@ app.post('/', async (req, res) => {
       });
     } catch (err) {
       console.error(err);
-      res.render('index', { 
+      res.render('index.ejs', { 
+        bgImage:"/media/bg/er.jpg",
         data: null 
     });
     }
